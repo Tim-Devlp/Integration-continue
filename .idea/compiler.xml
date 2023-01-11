@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Evaluation - Tests logiciels - Java (correction)" />
         <module name="Evaluation - Tests logiciels - Java" />
+        <module name="Integration-continue" />
       </profile>
     </annotationProcessing>
   </component>
