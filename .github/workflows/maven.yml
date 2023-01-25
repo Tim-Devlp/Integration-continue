@@ -38,7 +38,7 @@ jobs:
       run: mvn test
       
     - name : run test-IT
-      run  : mvn failsafe:integration-test
+      run  : mvn verify
       
       
       
