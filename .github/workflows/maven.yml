@@ -67,6 +67,6 @@ jobs:
 
     - name: SonarQube Quality Gate Check
       # You may pin to the exact commit or the version.
-      # uses: SonarSource/sonarqube-quality-gate-action@d304d050d930b02a896b0f85935344f023928496
-      uses: SonarSource/sonarqube-quality-gate-action@v1.1.0
+      uses: SonarSource/sonarqube-quality-gate-action@22e8c527cefded1415fc1cb1b690bfa42eb9dacc
+      # uses: SonarSource/sonarqube-quality-gate-action@v1.1.0
       
