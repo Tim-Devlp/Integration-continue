@@ -77,14 +77,15 @@ public class Database {
         return st;
     }
 
-    /**
+/**
      * Affiche la première table présente en BDD
      * @return le nom de la première table trouvée
      */
     public String showTable() {
+        String s = "SELECT name FROM sqlite_master WHERE type='table';";
+        Statement st = null;
         try {
-            String s = "SELECT name FROM sqlite_master WHERE type='table';";
-            Statement st = connection.createStatement();
+             st= connection.createStatement();
             st.setQueryTimeout(30);
             ResultSet rs = st.executeQuery(s);
             if (rs.next()) {
@@ -92,6 +93,12 @@ public class Database {
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } finally {
+            try {
+                st.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         return null;
@@ -103,13 +110,20 @@ public class Database {
      * @return les résultats
      */
     public ResultSet executeSelect(String select) {
+        Statement st = null;
         try {
-            Statement st = connection.createStatement();
+             st = connection.createStatement();
             st.setQueryTimeout(30);
             return st.executeQuery(select);
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } finally {
+            try {
+                st.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
 
     }
