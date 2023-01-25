@@ -93,13 +93,8 @@ public class Database {
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } finally {
-            try {
-                st.close();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        }
+        } 
+        
 
         return null;
     }
@@ -118,13 +113,8 @@ public class Database {
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } finally {
-            try {
-                st.close();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        }
+        } 
+        
 
     }
 }
